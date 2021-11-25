@@ -15,6 +15,8 @@ namespace EFWebMVC_Async.Data
 
         public string ExtensedDescription { get; set; }
 
+        public decimal TimeSpent { get; set; }
+
         public string UserName { get; set; }
 
         public string IpAddress { get; set; }

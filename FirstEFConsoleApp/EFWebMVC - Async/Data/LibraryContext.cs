@@ -31,6 +31,10 @@ namespace EFWebMVC
         {
             var author = modelBuilder.Entity<Author>();
 
+            modelBuilder.Entity<AuditEntity>()
+                .Property(p => p.TimeSpent)
+                .HasPrecision(20);
+
             author.HasData(new[]
             {
                 new Author {AuthorId = 1, Name = "Stephen", LastName = "King"},
@@ -54,7 +58,7 @@ namespace EFWebMVC
 
             var bookRating = modelBuilder.Entity<RatedBook>();
 
-            bookRating
+            
 
             
 
@@ -78,6 +82,7 @@ namespace EFWebMVC
                 .HasSchema("dbo");
 
             modelBuilder.Entity<Country>().ToTable("Countries");
+
             base.OnModelCreating(modelBuilder);
         }
 
